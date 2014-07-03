@@ -11,7 +11,7 @@ License:	BSD
 Group:		Libraries/Python
 Source0:	https://github.com/msiemens/PyGitUp/archive/v%{version}.tar.gz?/%{module}-v%{version}.tar.gz
 # Source0-md5:	fd7d89489bb045853077909fe0fd95aa
-URL:		-
+URL:		https://github.com/msiemens/PyGitUp
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
 BuildRequires:	rpmbuild(macros) >= 1.219
