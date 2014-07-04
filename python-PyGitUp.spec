@@ -37,6 +37,9 @@ Requires:	python-termcolor >= 1.1.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# pythonegg deps generator can't parse gitpython version properly
+%define		_noautoreq	gitpython
+
 %description
 git-up(1) -- fetch and rebase all locally-tracked remote branches.
 
