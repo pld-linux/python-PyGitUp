@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# do not perform "make test"
 
 %define		module	PyGitUp
 Summary:	git-up(1) -- fetch and rebase all locally-tracked remote branches
@@ -11,6 +11,7 @@ License:	BSD
 Group:		Libraries/Python
 Source0:	https://github.com/msiemens/PyGitUp/archive/v%{version}.tar.gz?/%{module}-v%{version}.tar.gz
 # Source0-md5:	fd7d89489bb045853077909fe0fd95aa
+Patch0:		requirements.patch
 URL:		https://github.com/msiemens/PyGitUp
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
@@ -41,6 +42,7 @@ git-up(1) -- fetch and rebase all locally-tracked remote branches.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
 
 %build
 %{__python} setup.py build %{?with_tests:test}
@@ -60,9 +62,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS CREDITS ChangeLog NEWS README THANKS TODO
-%{py_sitescriptdir}/*.py[co]
-%attr(755,root,root) %{py_sitescriptdir}/*.so
+%doc README.rst
+%attr(755,root,root) %{_bindir}/git-up
+%attr(755,root,root) %{_bindir}/gitup.py
+%dir %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/%{module}/*.py[co]
+%{py_sitescriptdir}/%{module}/check-bundler.rb
 %if "%{py_ver}" > "2.4"
-%{py_sitescriptdir}/TEMPLATE-*.egg-info
+%{py_sitescriptdir}/git_up-*.egg-info
 %endif

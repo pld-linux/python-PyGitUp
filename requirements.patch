@@ -1,0 +1,24 @@
+--- PyGitUp-1.1.4/requirements.txt~	2014-04-18 15:16:40.000000000 +0200
++++ PyGitUp-1.1.4/requirements.txt	2014-07-04 21:58:53.752795470 +0200
+@@ -1,4 +1,4 @@
+-GitPython==0.3.2.RC1
+-colorama==0.2.4,==0.3.0
+-termcolor==1.1.0
+-docopt==0.6.1
++GitPython>=0.3.2.RC1
++colorama>=0.2.4
++termcolor>=1.1.0
++docopt>=0.6.1
+--- PyGitUp-1.1.4/setup.py~	2014-04-18 15:16:40.000000000 +0200
++++ PyGitUp-1.1.4/setup.py	2014-07-04 22:00:21.402320632 +0200
+@@ -6,8 +6,8 @@
+     version="1.1.4",
+     packages=find_packages(exclude=["tests"]),
+     scripts=['PyGitUp/gitup.py'],
+-    install_requires=['GitPython==0.3.2.RC1', 'colorama==0.2.4,==0.3.0',
+-                      'termcolor==1.1.0', 'docopt==0.6.1'],
++    install_requires=['GitPython>=0.3.2.RC1', 'colorama>=0.2.4',
++                      'termcolor>=1.1.0', 'docopt>=0.6.1'],
+ 
+     # Tests
+     test_suite="nose.collector",
