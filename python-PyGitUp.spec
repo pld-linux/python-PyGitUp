@@ -15,7 +15,7 @@ URL:		https://github.com/msiemens/PyGitUp
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
 BuildRequires:	rpmbuild(macros) >= 1.219
-BuildRequires:	python-GitPython >= 0.3.2.RC1
+BuildRequires:	python-git >= 0.3.2-0.RC1.2
 BuildRequires:	python-async
 BuildRequires:	python-colorama >= 0.2.4
 BuildRequires:	python-distribute
@@ -24,7 +24,7 @@ BuildRequires:	python-gitdb
 BuildRequires:	python-nose
 BuildRequires:	python-smmap
 BuildRequires:	python-termcolor >= 1.1.0
-Requires:	python-GitPython >= 0.3.2.RC1
+Requires:	python-git >= 0.3.2-0.RC1.2
 Requires:	python-async
 Requires:	python-colorama >= 0.2.4
 Requires:	python-docopt >= 0.6.1
