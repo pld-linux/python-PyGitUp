@@ -5,18 +5,18 @@
 %define		module	PyGitUp
 Summary:	git-up(1) -- fetch and rebase all locally-tracked remote branches
 Name:		python-%{module}
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://github.com/msiemens/PyGitUp/archive/v%{version}.tar.gz?/%{module}-v%{version}.tar.gz
-# Source0-md5:	fd7d89489bb045853077909fe0fd95aa
+# Source0-md5:	9d271f0b1867307efbb8365ae88fe941
 Patch0:		requirements.patch
 URL:		https://github.com/msiemens/PyGitUp
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
 BuildRequires:	rpmbuild(macros) >= 1.219
-BuildRequires:	python-git >= 0.3.2-0.RC1.2
+BuildRequires:	python-git >= 0.3.2.1
 BuildRequires:	python-async
 BuildRequires:	python-colorama >= 0.2.4
 BuildRequires:	python-distribute
@@ -36,9 +36,6 @@ Requires:	python-smmap
 Requires:	python-termcolor >= 1.1.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-# pythonegg deps generator can't parse gitpython version properly
-%define		_noautoreq	gitpython
 
 %description
 git-up(1) -- fetch and rebase all locally-tracked remote branches.
