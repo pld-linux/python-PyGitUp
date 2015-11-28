@@ -45,15 +45,12 @@ git-up(1) -- fetch and rebase all locally-tracked remote branches.
 %patch0 -p1
 
 %build
-%{__python} setup.py build %{?with_tests:test}
+%py_build %{?with_tests:test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__python} setup.py \
-	install --skip-build \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 %py_postclean
 
