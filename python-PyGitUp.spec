@@ -6,7 +6,7 @@
 Summary:	git-up(1) -- fetch and rebase all locally-tracked remote branches
 Name:		python-%{module}
 Version:	1.1.5
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries/Python
 Source0:	https://github.com/msiemens/PyGitUp/archive/v%{version}.tar.gz?/%{module}-v%{version}.tar.gz
