@@ -15,7 +15,7 @@ Patch0:		requirements.patch
 URL:		https://github.com/msiemens/PyGitUp
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-git >= 0.3.2.1
 BuildRequires:	python-async
 BuildRequires:	python-colorama >= 0.2.4
