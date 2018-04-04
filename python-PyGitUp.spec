@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_with	tests	# do not perform "make test"
 
 %define		module	PyGitUp
 Summary:	git-up(1) -- fetch and rebase all locally-tracked remote branches
