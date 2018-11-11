@@ -5,12 +5,12 @@
 %define		module	PyGitUp
 Summary:	git-up(1) -- fetch and rebase all locally-tracked remote branches
 Name:		python-%{module}
-Version:	1.4.6
+Version:	1.6.0
 Release:	1
 License:	BSD
 Group:		Libraries/Python
-Source0:	https://github.com/msiemens/PyGitUp/archive/v%{version}.tar.gz?/%{module}-v%{version}.tar.gz
-# Source0-md5:	0ee651ee4625e0089284735c99cbf558
+Source0:	https://github.com/msiemens/PyGitUp/archive/v%{version}/%{module}-v%{version}.tar.gz
+# Source0-md5:	f86f0b91e13defeddee38b9cb7b64b44
 URL:		https://github.com/msiemens/PyGitUp
 BuildRequires:	rpm-pythonprov
 # if py_postclean is used
