@@ -2,7 +2,7 @@
 # Conditional build:
 %bcond_without	python2	# CPython 2.x module
 %bcond_without	python3	# CPython 3.x module
-%bcond_without	tests	# unit tests
+%bcond_with	tests	# unit tests (need git configured for user)
 
 %define		module	PyGitUp
 Summary:	git-up(1) - fetch and rebase all locally-tracked remote branches
@@ -16,6 +16,7 @@ Group:		Libraries/Python
 Source0:	https://github.com/msiemens/PyGitUp/archive/v%{version}/%{module}-v%{version}.tar.gz
 # Source0-md5:	8573a0c48aa0afa6dddae51d1cd204c1
 URL:		https://github.com/msiemens/PyGitUp
+%{?with_tests:BuildRequires:	git-core}
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
