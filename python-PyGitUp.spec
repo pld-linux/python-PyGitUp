@@ -9,7 +9,7 @@ Summary:	git-up(1) - fetch and rebase all locally-tracked remote branches
 Summary(pl.UTF-8):	git-up(1) - pobieranie i rebase wszystkich śledzonych lokalnie zdanych gałęzi
 Name:		python-%{module}
 Version:	1.6.1
-Release:	4
+Release:	5
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://github.com/msiemens/PyGitUp/releases
@@ -84,20 +84,20 @@ gałęzi.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%if %{with python3}
-%py3_install
-
-%{__mv} $RPM_BUILD_ROOT%{_bindir}/git-up{,-3}
-
-%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/PyGitUp/tests
-%endif
-
 %if %{with python2}
 %py_install
+
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/git-up{,-2}
 
 %py_postclean
 
 %{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/PyGitUp/tests
+%endif
+
+%if %{with python3}
+%py3_install
+
+%{__rm} -r $RPM_BUILD_ROOT%{py3_sitescriptdir}/PyGitUp/tests
 %endif
 
 %clean
@@ -107,7 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENCE README.rst
-%attr(755,root,root) %{_bindir}/git-up
+%attr(755,root,root) %{_bindir}/git-up-2
 %dir %{py_sitescriptdir}/PyGitUp
 %{py_sitescriptdir}/PyGitUp/*.py[co]
 %{py_sitescriptdir}/PyGitUp/check-bundler.rb
@@ -118,7 +118,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n python3-%{module}
 %defattr(644,root,root,755)
 %doc LICENCE README.rst
-%attr(755,root,root) %{_bindir}/git-up-3
+%attr(755,root,root) %{_bindir}/git-up
 %dir %{py3_sitescriptdir}/PyGitUp
 %{py3_sitescriptdir}/PyGitUp/*.py
 %{py3_sitescriptdir}/PyGitUp/__pycache__
