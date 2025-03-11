@@ -9,7 +9,7 @@ Summary:	git-up(1) - fetch and rebase all locally-tracked remote branches
 Summary(pl.UTF-8):	git-up(1) - pobieranie i rebase wszystkich śledzonych lokalnie zdanych gałęzi
 Name:		python-%{module}
 Version:	1.6.1
-Release:	10
+Release:	11
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://github.com/msiemens/PyGitUp/releases
